@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/app.css">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <li class="header">
+                {% if session["username"] %}
+                <a href="/users/{{session['username']}}" class="nav-link">Flask Authenticate App</a>
+                {% else %}
+                <a href="/" class="nav-link">Flask Authenticate App</a>                
+                {% endif %}
+            </li>
+            <ul class="nav-ul">
+                {% if session["username"] %}
+                <form action="/logout" method="POST">
+                    <button id="button-li">Logout</button>
+                </form>
+                {% else %}
+                <li class="nav-li">
+                    <a href="/login" class="nav-link">Login</a>
+                </li>
+                <li class="nav-li">
+                    <a href="/" class="nav-link">Sign Up</a>
+                </li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <section class="messages">
+            {% for category, msg in messages %}
+                <p class="{{category}}">{{msg}}</p>
+            {% endfor %}
+            </section>
+        {% endif %}
+    {% endwith %}
+
+    <h1>{% block h1 %}{% endblock %}</h1>
+    {% block body %} {% endblock %}
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+        crossorigin="anonymous"></script>
+    <script src="static/app.js"></script> -->
+</body>
+</html>

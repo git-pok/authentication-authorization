@@ -1,0 +1,199 @@
+body {
+    font-size: 10%;
+    overflow-x: hidden;
+    margin: 8px 8px;
+}
+
+.bold {
+    font-weight: 900;
+}
+
+h1 {
+    font-size: 20em;
+    margin-bottom: 0px;
+    text-shadow: #de28ba 1px 0px 10px;
+}
+
+h2, h3 {
+    font-size: 15em;
+    margin-bottom: 0px;
+    text-shadow: #2883de 1px 0px 10px;
+}
+
+li {
+    font-size: 14em;
+    margin-bottom: 18px;
+    width: 100px;
+}
+
+p {
+    font-size: 14em;
+    margin-bottom: 18px;
+    width: 50vw;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #000c79;
+    width: 100%;
+    padding-top: 13px;
+    /* color: rgb(255, 255, 255);
+    padding-right: 4px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 14em; */
+}
+
+.header {
+    width: 400px;
+    color: rgb(255, 255, 255);
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+    font-size: 14em;
+    /* background-color: #000c79;
+    color: rgb(255, 255, 255);
+    padding-right: 4px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 14em; */
+}
+
+.nav-ul {
+    display: flex;
+    justify-content: flex-end;
+    height: 50px;
+}
+
+.nav-link, .nav-li {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    list-style: none;
+    text-align: center;
+}
+
+.nav-link:hover, .nav-li:hover {
+    text-decoration: none;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 12, 121);
+    list-style: none;
+}
+
+.div {
+    margin-bottom: 90px;
+}
+
+.feedback {
+    /* background-color: #c3cfdb; */
+    margin-bottom: 70px;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100vw;
+}
+
+ul > div {
+    margin-right: 30px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+}
+
+form button, button {
+    width: 100px;
+    margin-bottom: 20px;
+    font-size: 7em;
+    transition: border 0.2s ease-in;
+}
+
+form button:hover, button:hover {
+    border-color: #7a0074;
+}
+
+form input {
+    width: 500px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+button #button-li, #button-li {
+    background-color: #000c79;
+    border: none;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    list-style: none;
+    font-size: 14em;
+    display: flex;
+    justify-content: center;
+}
+
+#button-li:hover {
+    text-decoration: none;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 12, 121);
+    list-style: none;
+}
+
+label {
+    font-size: 10em;
+}
+
+img {
+    display: block;
+    width: 14vw;
+    margin-bottom: 50px;
+}
+
+.success {
+    display: block;
+    width: 400px;
+    height: 5px;
+    /* margin: 0px auto; */
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    line-height: 5px;
+    box-shadow: 2px 3px 2px hsla(0, 0%, 0%, 0.333);
+    border-radius: 10px;
+    padding: 20px 20px;
+    color: black;
+    background-color: rgb(182, 239, 199);
+    font-size: 9em;
+}
+
+.error {
+    display: block;
+    width: 400px;
+    height: 5px;
+    /* margin: 0px auto; */
+    margin-bottom: 20px;
+    margin-top: 20px;
+    text-align: center;
+    line-height: 5px;
+    box-shadow: 2px 3px 2px hsla(0, 0%, 0%, 0.333);
+    border-radius: 10px;
+    padding: 20px 20px;
+    color: black;
+    background-color: rgb(239, 192, 182);
+    font-size: 9em;
+}
+
+.messages {
+    display: block;
+}
+
+#gif {
+    display: block;
+    width: 30vw;
+    margin-bottom: 50px;
+}

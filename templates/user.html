@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block title %}User Page{% endblock %}
+{% block h1 %}User: {{ user.username }}{% endblock %}
+{% block body %}
+<div class="div">
+<p><span class="bold">Username:</span> {{ user.username }}</p>
+<p><span class="bold">First Name:</span> {{ user.first_name }}</p>
+<p><span class="bold">Last Name:</span> {{ user.last_name }}</p>
+<p><span class="bold">Email:</span> {{ user.email }}</p>
+
+{% if session['username'] == username %}
+<form action="/users/{{ username }}/delete" method="POST">
+    <button>DELETE USER</button>
+</form>
+{% endif %}
+</div>
+<div class="feedback-div">
+    {% if feedback %}
+    <button><a href="/users/{{user.username}}/feedback/add">+FEEDBACK</a></button>
+        {% for tuple in feedback %}
+        <form action="/feedback/{{ tuple[2] }}/delete" mehtod="POST">
+            <h2>Feedback: {{ tuple[0] }}</h2>
+            <div class="feedback">
+                <p><span class="bold">Title:</span> {{ tuple[0] }}</p>
+                <p><span class="bold">Content:</span> {{ tuple[1] }}</p>
+                <p><span class="bold">Username:</span> {{ user.username }}</p>
+                <button type="button"><a href="/feedback/{{ tuple[2] }}/update">EDIT</a></button>
+                <button type="submit">DELETE</button>
+            </div>
+        </form>
+        {% endfor %}
+    {% else %}
+        <h2>No Feedback</h2>
+        <button><a href="/users/{{user.username}}/feedback/add">+FEEDBACK</a></button>
+    {% endif %}
+</div>
+{% endblock %}

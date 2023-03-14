@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}Form Base Html{% endblock %}
+{% block body %}
+<form method="POST" {% block action %}{% endblock %}>
+    {{ form.hidden_tag() }}
+    {% for field in form if field.widget.input_type != 'hidden' %}
+    <div>
+        {{field.label}}
+        {{field(class_="input")}}
+        <!-- Note, these errors, err, wont show unless we delete, required,
+            attribute from the html input inpsection,
+            before we submit the form. -->
+        {% for err in field.errors %}
+            <p class="error">{{err}}</p>
+        {% endfor %}    
+    </div>
+    {% endfor %}
+    <button>SUBMIT!</button>
+</form>
+{% endblock %}
